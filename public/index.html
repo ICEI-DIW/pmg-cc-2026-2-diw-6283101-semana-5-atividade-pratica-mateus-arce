@@ -8,13 +8,14 @@
 </head>
 <body>
 
-  <!-- CABEÇALHO COM NAVEGAÇÃO -->
+  <!-- CABEÇALHO COM NAVEGAÇÃO (4 LINKS INTERNOS) -->
   <header class="header">
     <div class="logo">
       <h1>Mentes Brilhantes</h1>
     </div>
     <nav class="nav">
       <a href="#home" class="nav-btn">Home</a>
+      <a href="#pesquisadores" class="nav-btn">Pesquisadores</a>
       <a href="#descobertas" class="nav-btn">Descobertas</a>
       <a href="#sobre" class="nav-btn">Sobre</a>
     </nav>
@@ -23,15 +24,19 @@
   <!-- CONTEÚDO PRINCIPAL (MAIN) -->
   <main>
 
-    <!-- BANNER HERO COM X GRANDE -->
+    <!-- BANNER HERO COM TEXTO INTRODUTÓRIO -->
     <section id="home" class="hero-section">
+      <div class="intro-text">
+        <h2>Bem-vindo ao Portal Mentes Brilhantes</h2>
+        <p>Explore a vida e as contribuições dos maiores cientistas e matemáticos que moldaram a tecnologia e o mundo moderno.</p>
+      </div>
       <div class="hero-card">
         <img src="images/cosmos.png" alt="Banner Principal" class="hero-img">
       </div>
     </section>
 
-    <!-- GRADE DE 3 PESQUISADORES COM NOME E BOTÃO -->
-    <section class="researchers-section">
+    <!-- SEÇÃO SECUNDÁRIA: 3 CARDS COM IMAGEM, TÍTULO E BREVE DESCRIÇÃO -->
+    <section id="pesquisadores" class="researchers-section">
       <div class="researchers-grid">
 
         <!-- CARD 1 -->
@@ -41,6 +46,7 @@
           </div>
           <div class="card-body">
             <h3 class="researcher-name">Nikola Tesla</h3>
+            <p class="card-desc">Pionero no desenvolvimento do sistema de corrente alternada e tecnologias de rádio.</p>
             <a href="#descobertas" class="btn">Ver Produções</a>
           </div>
         </article>
@@ -52,6 +58,7 @@
           </div>
           <div class="card-body">
             <h3 class="researcher-name">Srinivasa Ramanujan</h3>
+            <p class="card-desc">Genio matemático autodidata com contribuições profundas na teoria dos números.</p>
             <a href="#descobertas" class="btn">Ver Produções</a>
           </div>
         </article>
@@ -63,6 +70,7 @@
           </div>
           <div class="card-body">
             <h3 class="researcher-name">Alan Turing</h3>
+            <p class="card-desc">Pai da ciência da computação teórica e da inteligência artificial.</p>
             <a href="#descobertas" class="btn">Ver Produções</a>
           </div>
         </article>
@@ -70,48 +78,61 @@
       </div>
     </section>
 
-    <!-- SEÇÃO DESCOBERTAS (3 COLUNAS DE TEXTO) -->
+    <!-- SEÇÃO DESCOBERTAS -->
     <section id="descobertas" class="discoveries-section">
       <div class="discoveries-grid">
-
         <div class="discovery-item">
           <h3>Descoberta 1</h3>
           <p>Sistemas de corrente alternada e desenvolvimento de motores elétricos que revolucionaram a distribuição de energia.</p>
         </div>
-
         <div class="discovery-item">
           <h3>Descoberta 2</h3>
           <p>Identidades matemáticas e séries infinitas para aproximação de constantes fundamentais como o número Pi.</p>
         </div>
-
         <div class="discovery-item">
           <h3>Descoberta 3</h3>
           <p>Modelos computacionais teóricos e métodos criptográficos fundamentais para a ciência da computação.</p>
         </div>
-
       </div>
     </section>
 
-    <!-- FORMULÁRIO EXIGIDO NO ENUNCIADO (2 CAMPOS E BOTÃO) -->
+    <!-- SEÇÃO DE CONTATO E SUGESTÕES -->
     <section id="sobre" class="form-section">
+      <div class="form-header">
+        <h2>Contato & Sugestões</h2>
+        <p>Quer sugerir um novo pesquisador para o portal? Envie sua mensagem!</p>
+      </div>
       <form class="contact-form">
         <div class="form-group">
-          <label for="matricula">Matrícula</label>
-          <input type="text" id="matricula" name="matricula" value="915736" placeholder="Sua Matrícula" required>
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" name="nome" value="Mateus Arce Alves" placeholder="Seu nome" required>
         </div>
+        
         <div class="form-group">
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" value="Mateus Arce Alves" placeholder="Seu Nome" required>
+          <label for="matricula">Matrícula / Código do Aluno</label>
+          <input type="text" id="matricula" name="matricula" value="915736" placeholder="Sua matrícula" required>
         </div>
-        <button type="submit" class="btn btn-submit">Enviar</button>
+
+        <div class="form-group">
+          <label for="mensagem">Mensagem ou Sugestão</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva aqui sua sugestão de cientista ou dúvida..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-submit">Enviar Mensagem</button>
       </form>
     </section>
 
   </main>
 
-  <!-- RODAPÉ -->
+  <!-- RODAPÉ COM REDES SOCIAIS E INFOS INSTITUCIONAIS -->
   <footer class="footer">
-    <p>Matrícula: <strong>915736</strong> | Nome: <strong>Mateus Arce Alves</strong></p>
+    <div class="footer-content">
+      <p>Matrícula: <strong>915736</strong> | Nome: <strong>Mateus Arce Alves</strong></p>
+      <div class="social-links">
+        <a href="https://github.com" target="_blank">GitHub</a> |
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+      </div>
+    </div>
   </footer>
 
 </body>

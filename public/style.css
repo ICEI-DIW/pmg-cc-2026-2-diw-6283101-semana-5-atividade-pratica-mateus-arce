@@ -50,11 +50,27 @@ body {
   color: #0f172a;
 }
 
-/* Banner principal */
+/* Banner e Texto Introdutório */
 .hero-section {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
+}
+
+.intro-text {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.intro-text h2 {
+  font-size: 1.8rem;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.intro-text p {
+  color: #475569;
+  font-size: 1.1rem;
 }
 
 .hero-card {
@@ -74,7 +90,7 @@ body {
   display: block;
 }
 
-/* Seção dos pesquisadores */
+/* Seção dos pesquisadores (Cards) */
 .researchers-section {
   max-width: 1200px;
   margin: 2rem auto;
@@ -116,13 +132,18 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  text-align: center;
+  gap: 0.8rem;
 }
 
 .researcher-name {
   font-size: 1.2rem;
   color: #1e293b;
-  text-align: center;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: #64748b;
 }
 
 .btn {
@@ -173,7 +194,7 @@ body {
   font-size: 0.95rem;
 }
 
-/* Formulário de contato */
+/* Estilos do Formulário */
 .form-section {
   max-width: 600px;
   margin: 3rem auto;
@@ -193,24 +214,63 @@ body {
 .form-group {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   gap: 0.4rem;
 }
 
 .form-group label {
   font-weight: bold;
   color: #334155;
+  font-size: 0.95rem;
+  text-align: left;
 }
 
-.form-group input {
+.form-group input,
+.form-group textarea {
+  width: 100%;
   padding: 0.7rem;
   border: 1px solid #94a3b8;
   border-radius: 4px;
   font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
 }
 
-.btn-submit {
-  margin-top: 0.5rem;
-  width: 100%;
+.form-group textarea:focus,
+.form-group input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}.form-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-header h2 {
+  color: #1e293b;
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.form-header p {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.form-group textarea {
+  padding: 0.7rem;
+  border: 1px solid #94a3b8;
+  border-radius: 4px;
+  font-size: 1rem;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-group textarea:focus,
+.form-group input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
 /* Rodapé */
@@ -224,4 +284,78 @@ body {
 
 .footer strong {
   color: #ffffff;
+}
+
+.social-links {
+  margin-top: 0.5rem;
+}
+
+.social-links a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVIDADE COM CSS PURO (MEDIA QUERIES) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .researchers-grid {
+    flex-direction: column;
+  }
+
+  .researcher-card {
+    width: 100%;
+  }
+
+  .discoveries-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.researcher-card {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  /* Adicione a transição para suavizar o movimento */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse em cima */
+.researcher-card:hover {
+  transform: scale(1.075); /* Aumenta 5% do tamanho original */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Aumenta a sombra para dar efeito de elevação */
+}
+
+.discovery-item {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-left: 5px solid #2563eb;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  /* Adicione a transição para suavizar o movimento */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse em cima */
+.discovery-item:hover {
+  transform: scale(1.075); /* Aumenta 3% do tamanho original */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
 }
