@@ -25,6 +25,25 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem; /* Espaço entre a imagem e o texto */
+}
+
+.logo-img {
+  width: 60px; /* Tamanho ideal para um ícone no cabeçalho */
+  height: 60px;
+  object-fit: contain; /* Evita que a imagem fique distorcida */
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+/* Efeito interativo opcional ao passar o mouse na logo */
+.logo:hover .logo-img {
+  transform: scale(1.25); /* Dá um leve giro e zoom */
+}
+
 .logo h1 {
   font-size: 1.5rem;
   font-weight: bold;
@@ -73,21 +92,74 @@ body {
   font-size: 1.1rem;
 }
 
+/* Banner principal interativo */
 .hero-card {
+  position: relative;
   background-color: #e2e8f0;
   border-radius: 8px;
-  overflow: hidden;
+  overflow: visible; /* Permite que o zoom fique por cima dos cards abaixo */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  z-index: 1; /* Camada normal */
+  transition: transform 0.4s ease, box-shadow 0.4s ease, z-index 0s;
 }
 
+/* Imagem do Banner */
 .hero-img {
   width: 100%;
   max-height: 400px;
   object-fit: cover;
   display: block;
+  border-radius: 8px;
+  transition: filter 0.4s ease;
+}
+
+/* Caixa flutuante informativa (Overlay) */
+.hero-overlay {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  width: 85%;
+  background-color: rgba(255, 255, 255, 0.65);
+  padding: 1.2rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  opacity: 0; /* Invisível por padrão */
+  visibility: hidden;
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+
+.hero-overlay h3 {
+  color: #1e293b;
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.hero-overlay p {
+  color: #242b35;
+  font-size: 0.95rem;
+}
+
+/* EFEITO HOVER (Ao passar o cursor) */
+.hero-card:hover {
+  z-index: 100; /* Sobrepõe os cards dos pesquisadores */
+  transform: scale(1.04); /* Expande levemente */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.hero-card:hover .hero-img {
+  filter: brightness(0.85); /* Suaviza a imagem */
+}
+
+.hero-card:hover .hero-overlay {
+  opacity: 1; /* Revela a caixa */
+  visibility: visible;
+  transform: translateX(-50%) translateY(0); /* Sobe suavemente */
 }
 
 /* Seção dos pesquisadores (Cards) */
@@ -358,4 +430,19 @@ body {
 .discovery-item:hover {
   transform: scale(1.075); /* Aumenta 3% do tamanho original */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Ajuste de scroll para alinhar perfeitamente o topo de cada seção */
+#home,
+#pesquisadores,
+#descobertas {
+  scroll-margin-top: 320px; /* Ajusta a parada ao centro da tela */
+}
+
+#sobre {
+  scroll-margin-top: 100px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
