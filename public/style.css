@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #f4f5f7;
+  background-color: #c3c4c7;
   color: #333333;
   line-height: 1.6;
 }
@@ -88,7 +88,7 @@ body {
 }
 
 .intro-text p {
-  color: #475569;
+  color: #232a31;
   font-size: 1.1rem;
 }
 
@@ -371,7 +371,7 @@ body {
   text-decoration: underline;
 }
 
-/* RESPONSIVIDADE COM CSS PURO (MEDIA QUERIES) */
+/* RESPONSIVIDADE COM CSS*/
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
